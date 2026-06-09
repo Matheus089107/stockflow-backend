@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  stockflow-mysql:
+    image: mysql:8.0
+    container_name: stockflow-mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: senha_root_segura
+      MYSQL_DATABASE: stockflow_db
+      MYSQL_USER: nexasystems
+      MYSQL_PASSWORD: senha_segura_senai
+    volumes:
+      - stockflow-mysql-data:/var/lib/mysql
+    restart: always
+
+volumes:
+  stockflow-mysql-data:
