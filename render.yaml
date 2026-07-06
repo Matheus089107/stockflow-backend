@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: stockflow-backend
+    runtime: docker
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:h2:mem:stockflow_db
+      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+        value: org.h2.Driver
+      - key: SPRING_DATASOURCE_USERNAME
+        value: sa
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ""
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
